@@ -4,7 +4,7 @@ Cyber Security Tool Kit
 
 ## What does this CSTK do?
 
-This project downloads and installs required tools for pen-testing, and data analysis. It is built and designed with the intent to integrate into any existing tools such as Trello, JIRA, and/or Slack while following KISS principles.
+This project downloads and installs required tools for pen-testing, and data analysis. It is built and designed with the intent to integrate into any existing tools such as Wigle, Trello, JIRA, and/or Slack while following KISS principles.
 
 ## Why is this project useful?
 
