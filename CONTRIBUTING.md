@@ -4,6 +4,7 @@ When contributing to this repository, please first discuss the change you wish t
 email, or any other method with the owners of this repository before making a change. 
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
+Also, please test the code, we follow TDD (Test Driven Development), [TDD Guide](https://medium.com/@ksarthak4ever/test-driven-development-tdd-in-django-and-django-rest-framework-drf-a889a8068cb7)
 
 ## Pull Request Process
 
