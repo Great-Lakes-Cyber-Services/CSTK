@@ -24,11 +24,14 @@ TODO
 
 ## Built With
 
-TODO
+* [Django](https://github.com/django/django) - The web framework used
+* [Django Rest Framework](https://github.com/encode/django-rest-framework) - toolkit for building Web APIs
+* [Celery](https://github.com/celery/celery) - asynchronous task queue/job queue based on distributed message passing
+* [RabbitMQ](https://github.com/rabbitmq/rabbitmq-server) - message broker for Celery
 
 ## Contributing
 
-TODO
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
