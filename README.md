@@ -47,6 +47,6 @@ This project is licensed under the GPLv3 - see the [LICENSE.md](LICENSE.md) file
 
 ## Acknowledgments
 
-* @Purple-Booth-Ltd
-* @darkmatter0
-* @ksarthak4ever
+* [PurpleBooth](https://github.com/PurpleBooth)
+* [darkmatter0](https://github.com/darkmatter0)
+* [ksarthak4ever](https://github.com/ksarthak4ever)
