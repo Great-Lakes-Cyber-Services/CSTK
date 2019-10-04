@@ -12,7 +12,11 @@ This has been developed and tested on Ubuntu 18.04.3 LTS.
 
 ### Installing
 
-TODO
+You will need to run setup_cstk.sh either as root or with sudo
+
+```
+sudo ./setup_cstk.sh
+```
 
 ## Running the tests
 
@@ -20,7 +24,16 @@ TODO
 
 ## Deployment
 
-TODO
+You will need to start honcho either as root or with sudo
+
+TODO:
+* Honcho ProcFile setup via setup_cstk.sh or create_env.py
+
+```
+sudo su
+source venv/bin/activate
+honcho start
+```
 
 ## Built With
 
@@ -28,6 +41,9 @@ TODO
 * [Django Rest Framework](https://github.com/encode/django-rest-framework) - toolkit for building Web APIs
 * [Celery](https://github.com/celery/celery) - asynchronous task queue/job queue based on distributed message passing
 * [RabbitMQ](https://github.com/rabbitmq/rabbitmq-server) - message broker for Celery
+* [Honcho](https://github.com/nickstenning/honcho) - Multiplexing multiple processes output
+* [Django-environ](https://github.com/joke2k/django-environ) - Configure CSTK settings.py with .env file
+* [Django Extensions](https://github.com/django-extensions/django-extensions) - collection of custom extensions
 
 ## Contributing
 
@@ -50,3 +66,4 @@ This project is licensed under the GPLv3 - see the [LICENSE.md](LICENSE.md) file
 * [PurpleBooth](https://github.com/PurpleBooth)
 * [darkmatter0](https://github.com/darkmatter0)
 * [ksarthak4ever](https://github.com/ksarthak4ever)
+* [al45tair](https://github.com/al45tair)
