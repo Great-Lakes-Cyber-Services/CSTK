@@ -22,6 +22,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 ## Create Log File Path
+mkdir -p "`pwd`/logs/setup_cstk"
 LOG_FILE="`pwd`/logs/setup_cstk/`date '+%Y%m%d_%H%M%S'`_setup.log"
 
 ## Run installed_pkg_checks.sh to check installs

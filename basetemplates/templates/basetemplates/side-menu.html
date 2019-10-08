@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="{% url 'wardriving:Kismet_Config' %}">CSTK</a>
+            <!-- TODO: Make this more dynamic -->
+            <ul class="pure-menu-list">
+                <li {% if request.resolver_match.url_name == 'Kismet_Config' %} class="pure-menu-item menu-item-divided pure-menu-selected" {% else %} class="pure-menu-item" {% endif %}>
+                    <a href="{% url 'wardriving:Kismet_Config' %}" class="pure-menu-link">WarDriving</a>
+                </li>
+            </ul>
+        </div>
+    </div>

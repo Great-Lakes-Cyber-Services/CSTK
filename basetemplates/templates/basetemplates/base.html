@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ context.title }}</title>
+    
+    {% include "basetemplates/styles.html" %}
+    
+    {% block styles2 %}
+    {% endblock %}
+
+</head>
+<body>
+
+	<div id="layout">
+    	{% include "basetemplates/side-menu.html" %}
+		
+		<div id="main">
+			{% csrf_token %}
+			{% block content_wrapper %}
+			{% endblock %}
+		</div>
+
+	</div>
+
+	{% include "basetemplates/plugins.html" %}
+
+	{% block js_plugins2 %}
+	{% endblock %}
+
+</body>
+</html>

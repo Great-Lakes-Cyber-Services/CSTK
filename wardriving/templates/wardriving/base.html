@@ -1,0 +1,124 @@
+{% extends "basetemplates/base.html" %}
+{% load staticfiles %}
+
+{% block styles2 %}
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.dataTables.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.dataTables.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal-resize.css' %}">
+{% endblock %}
+
+{% block content_wrapper %}
+    <div class="header">
+        <h1>{{ context.description }}</h1>
+        <h2>WarDriving</h2>
+        <h3>{{ context.attack_description }}</h3>
+    </div>
+
+    <div class="content">
+        <div>
+            <h2>Local Bluetooth Devices</h2>
+            <table id="local_bth" class="cell-border responsive stripe" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>MAC-ID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>MAC-ID</th>
+                        <th>Actions</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div>
+            <h2>Local Wifi Devices</h2>
+            <table id="wifi_devices" class="cell-border responsive stripe" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>MAC-ID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>MAC-ID</th>
+                        <th>Actions</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <section class="modal--show" id="modal-command" tabindex="-1"
+            role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+        <div class="modal-inner">
+            <header id="modal-label"><!-- Header --></header>
+            <div class="modal-content" id="modal-content"><!-- The modals content -->
+                
+            </div>
+            <footer id="modal-footer"><!-- Footer --></footer>
+        </div>
+
+        <a href="#!" id='modal-close' class="modal-close" title="Close this modal" data-close="Close"
+            data-dismiss="modal">?</a>
+    </section>
+{% endblock %}
+
+{% block js_plugins2 %}
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.responsive.min.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // gets cookie value from cookie key (name)
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie != '') {
+                    var cookies = document.cookie.split(';');
+                    //console.log(cookies);
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = jQuery.trim(cookies[i]);
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            //this is used for setting following ajax methods if it needs csrf token
+            function csrfSafeMethod(method) {
+                // these HTTP methods do not require CSRF protection
+                return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+            }
+
+            $.ajaxSetup({
+                beforeSend: function(xhr, settings) {
+                    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+                    }
+                }
+            });
+
+            function sleep(ms) {
+              return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            {% if request.resolver_match.url_name == 'Kismet_Config' %}
+                {% include "wardriving/Kismet_Config.html" %}
+            {% endif %}
+
+        });
+    </script>
+{% endblock %}
